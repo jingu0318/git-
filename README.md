@@ -173,9 +173,18 @@
 
 ## Git Flow / Trunk-Based 브랜치 전략
 
+![gitflow 전략](https://github.com/user-attachments/assets/96dd3038-a885-44e2-82b3-2c155b16aff6)
+
 1. **Git Flow**
    - 브랜치 구조: `main`, `develop`, `feature`, `release`, `hotfix`
-   - 각 브랜치의 역할을 명확히 구분합니다.
+   - develop 브랜치는 main프로젝트 사본이다. 팀원들에게 기존 main브랜치를 복사한 develop 브랜치에서 개발을 진행시킴.
+   - develop브랜치를 복사한 feature 브랜치에서 각각 개발한다. feature/guild 브랜치에서 길드기능을 만들고 feature/friend 브랜치에서 친구기능을 만든다. 완성이 되면 develop브랜치에 merge.
+   - develop에서 만든 2개의 기능이 완성된거 같아도 바로 main 가기보다 release 브랜치에서 테스트 진행
+   - 그 후 완성됐으면  develop 브랜치나 main 브랜치에 merge !! (개발은 계속되야 하니 develop에도 merge)
+   - 1.0 mian 브랜치에서 버그를발견 했을시 급하게 버그를 픽스하기 위해서 hotfix 브랜치를 통해 바로바로 버그 수정 1.0.1 로 main과 develop에 merge!!!
+
+![Trunk 전략](https://github.com/user-attachments/assets/00605afc-199f-434b-8887-f7900421c097)
+
 
 2. **Trunk-Based 전략**
    - 기능 추가 및 버그 픽스 시, main 브랜치에서 새 브랜치를 만들어 작업 후 바로 합칩니다.
